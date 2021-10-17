@@ -31,7 +31,7 @@ In order to get the cryptocurrency information we need from Coinbase, you will n
 Instantiate the library within your code as follows:
 
 ```javascript
-let coinbase = new CoinbaseLib.auth(api_key, api_secret);
+let coinbase = new CoinbaseLib.auth('api_key', 'api_secret');
 ```
 
 ## Contributing
