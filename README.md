@@ -30,7 +30,7 @@ In order to get the cryptocurrency information we need from Coinbase, you will n
 * A new window appears with your `API Key` and `API Secret`, make sure to copy these down. Once you close this window you won't be able to retrieve them again!
 
 ## Use
-Instantiate the library within your code as follows:
+Instantiate the library within your code and replace `api_key` and `api_secret` with the tokens you acquired in the previous step:
 
 ```javascript
 let coinbase = new CoinbaseLib.auth('api_key', 'api_secret');
