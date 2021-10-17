@@ -71,9 +71,9 @@ class Client {
     }
 
     function get_(requestPath) {
-      var content_ = [];
+      let content_ = [];
       // get requests can be paginated, make sure we iterate through all the pages
-      var response = request_('GET', requestPath);
+      let response = request_('GET', requestPath);
 
       if (!('pagination' in response)) {
         // result is not paginated
