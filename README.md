@@ -8,7 +8,8 @@ New to Coinbase? Use [my referral link](https://www.coinbase.com/join/paul_35bk)
 
 
 ## Add to your Google Apps Script project
-While in the editor, click the + next to "Libraries" in the Script menus
+While in the Apps Script editor:
+* Click the "+" button next to "Libraries" in the Script menus
 * Paste `1zfKYbXu33sgYgWPE6SKaFdeY-pqTWV5hEPBU4CSFs1dwKJDGfE0F55rF` (the project key for this script) in the window that appears
 * Click the "Look up" button to load the library
 * Select the most recent Version from the drop-down for best results
@@ -17,10 +18,10 @@ While in the editor, click the + next to "Libraries" in the Script menus
 
 ## Connecting to the Coinbase API
 In order to get the cryptocurrency information from Coinbase, you will need to supply your `API Key` and `API Secret` tokens in order to interface with this library. Head on over to the API Settings page at [Coinbase.com](https://www.coinbase.com/settings/api) (this link should take you straight there) to get started.
-* Click the "New API Key" button
+* Click the "+ New API Key" button
 * Under Accounts, select "All" or whichever specific Accounts you wish to enable
 * Under Permissions, select all of the permissions needed for your script.
-  * Typically basic read access is suffecient for a reporting app, for example:
+  * Typically, basic read access is suffecient for a reporting app, for example:
     * `wallet.accounts.read`
     * `wallet.transactions.read`
     * `wallet.buys.read`
@@ -33,8 +34,32 @@ In order to get the cryptocurrency information from Coinbase, you will need to s
 Instantiate the library within your code and replace `api_key` and `api_secret` with the tokens you acquired in the previous step:
 
 ```javascript
+// Authenticate to access your own account via signed API Key
 let coinbase = new CoinbaseLib.auth('api_key', 'api_secret');
+
+// Lists current user's accounts to which the authentication method has access to.
+let accounts = coinbase.getAccounts();
 ```
+
+### Supported Endpoints
+* [Notifications](https://developers.coinbase.com/api/v2#notifications)
+
+#### Data Endpoints
+* [Currencies](https://developers.coinbase.com/api/v2#currencies)
+* [Exchange Rates](https://developers.coinbase.com/api/v2#exchange-rates)
+* [Prices](https://developers.coinbase.com/api/v2#prices)
+* [Time](https://developers.coinbase.com/api/v2#time)
+
+#### Wallet Endpoints
+* [Users](https://developers.coinbase.com/api/v2#users)
+* [Accounts](https://developers.coinbase.com/api/v2#accounts)
+* [Addresses](https://developers.coinbase.com/api/v2#addresses)
+* [Transactions](https://developers.coinbase.com/api/v2#transactions)
+* [Buys](https://developers.coinbase.com/api/v2#buys)
+* [Sells](https://developers.coinbase.com/api/v2#sells)
+* [Deposits](https://developers.coinbase.com/api/v2#deposits)
+* [Withdrawals](https://developers.coinbase.com/api/v2#withdrawals)
+* [Payment Methods](https://developers.coinbase.com/api/v2#payment-methods)
 
 ## Contributing
 
