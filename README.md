@@ -38,5 +38,5 @@ See [list of contributors](https://github.com/neojato/coinbase-lib/graphs/contri
 
 ## License
 
-Project is published under the [MIT license](https://github.com/neojato/coinbase-lib/blob/master/LICENSE.md).  
+Project is published under the [MIT license](https://github.com/neojato/coinbase-lib/blob/main/LICENSE).  
 Feel free to clone and modify repo as you want, but don't forget to keep the reference to original authors, thanks!
