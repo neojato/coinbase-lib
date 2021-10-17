@@ -56,7 +56,7 @@ class Client {
         }
       };
 
-      if (method == 'POST' || method == 'PUT') {
+      if (method in ['POST','PUT']) {
         options.payload = JSON.stringify(params);
       }
       
@@ -300,7 +300,7 @@ class Client {
           throw 'Missing required parameter: ' + required[x];
         }
       }
-      return post_('/accounts/' + account_id + '/buys');
+      return post_('/accounts/' + account_id + '/buys', params);
     };
 
     this.commitBuy = function(account_id, buy_id, params) {
