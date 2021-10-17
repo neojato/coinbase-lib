@@ -71,6 +71,7 @@ class Client {
     }
 
     function get_(requestPath) {
+      var content_ = [];
       // get requests can be paginated, make sure we iterate through all the pages
       var response = request_('GET', requestPath);
 
@@ -82,7 +83,9 @@ class Client {
       response_.push(...response.data);
       if (response.pagination.next_uri == null) {
         // next_uri is null when the cursor has been iterated to the last element
-        return response_;
+        content_ = response_;
+        response_ = [];
+        return content_;
       }
 
       requestPath = response.pagination.next_uri.substring(3,); // remove API version from path
