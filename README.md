@@ -1,5 +1,9 @@
 # Coinbase Lib for Google Apps Script
-This library provides a simple Coinbase API integration for Google Apps Script.
+This library provides a simple Coinbase API integration for [Google Apps Script](https://developers.google.com/apps-script/).
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![clasp](https://img.shields.io/badge/built%20with-clasp-4285f4.svg)](https://github.com/google/clasp)
+
 
 ## Add to your Google Apps Script project
 While in the editor, click the + next to "Libraries" in the Script menus
