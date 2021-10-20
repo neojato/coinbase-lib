@@ -37,11 +37,13 @@ Instantiate the library within your code and replace `api_key` and `api_secret` 
 // Authenticate to access your own account via signed API Key
 let coinbase = new CoinbaseLib.auth('api_key', 'api_secret');
 
-// Lists current user's accounts to which the authentication method has access to.
+// Lists current user's accounts to which the authentication method has access to
 let accounts = coinbase.getAccounts();
 ```
 
-### Supported Endpoints
+### List of Supported Endpoints
+
+#### Notification Endpoints
 * [Notifications](https://developers.coinbase.com/api/v2#notifications)
 
 #### Data Endpoints
