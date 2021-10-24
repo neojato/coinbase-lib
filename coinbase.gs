@@ -7,10 +7,6 @@
 *  Start tracking your Coinbase portfolio easily by importing this library
 *  into your Google Apps Script project.
 *
-*  Go to Resources -> Libraries in the Script menus,
-*  paste in 1zfKYbXu33sgYgWPE6SKaFdeY-pqTWV5hEPBU4CSFs1dwKJDGfE0F55rF (the project key for this script),
-*  and add in Coinbaselib, whatever version is most recent.
-*
 *  Visit https://github.com/neojato/coinbase-lib for more details.
 *
 */
@@ -59,8 +55,17 @@ class Client {
       if (method in ['POST','PUT']) {
         options.payload = JSON.stringify(params);
       }
+
+      // limit repeat calls to UrlFetch
+      let cache = CacheService.getScriptCache();
+      let result = cache.get('https://api.coinbase.com/v2' + requestPath);
+
+      if (!result) {
+        result = handleResponse_(UrlFetchApp.fetch('https://api.coinbase.com/v2' + requestPath, options));
+        cache.put('https://api.coinbase.com/v2' + requestPath, result, 300);
+      }
       
-      return handleResponse_(UrlFetchApp.fetch('https://api.coinbase.com/v2' + requestPath, options));
+      return result;
     }
 
     function handleResponse_(response) {
