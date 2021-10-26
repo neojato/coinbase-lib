@@ -56,13 +56,14 @@ class Client {
         options.payload = JSON.stringify(params);
       }
 
-      // limit repeat calls to UrlFetch
+      // cache repeat calls to UrlFetch
       let cache = CacheService.getScriptCache();
-      let result = JSON.parse(cache.get('https://api.coinbase.com/v2' + requestPath));
+      let result = JSON.parse(cache.get(requestPath));
 
       if (!result) {
+        // path not found in cache, fetch then cache the response for 4.5 minutes
         result = handleResponse_(UrlFetchApp.fetch('https://api.coinbase.com/v2' + requestPath, options));
-        cache.put('https://api.coinbase.com/v2' + requestPath, JSON.stringify(result), 300);
+        cache.put(requestPath, JSON.stringify(result), 270);
       }
       
       return result;
