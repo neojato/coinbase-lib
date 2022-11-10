@@ -5,7 +5,7 @@ New to Coinbase? Use [my referral link](https://www.coinbase.com/join/paul_35bk)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![clasp](https://img.shields.io/badge/built%20with-clasp-4285f4.svg)](https://github.com/google/clasp)
-[![Donate with Bitcoin](https://en.cryptobadges.io/badge/micro/1KHCz4fZaCdgUExPs2Lis147SnTqAUHu76)](https://en.cryptobadges.io/donate/1KHCz4fZaCdgUExPs2Lis147SnTqAUHu76)
+<!-- [![Donate with Bitcoin](https://en.cryptobadges.io/badge/micro/1KHCz4fZaCdgUExPs2Lis147SnTqAUHu76)](https://en.cryptobadges.io/donate/1KHCz4fZaCdgUExPs2Lis147SnTqAUHu76) -->
 
 ## Add to your Google Apps Script project
 While in the Apps Script editor:
